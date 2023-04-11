@@ -1,0 +1,11 @@
+For this week we were given two websites (which are identical) that each had a /green, /blue, and /red version in order to pentest and see we can determine which 
+vulnerabilities belong to each version of the websites.
+We had to poke at each one and by order of elimination figure out which one was preconfigured with a vulnerability.
+
+On the /red site I saw that there was the ability to attack the URL and change the users page, with changing the 'id' number to something that it should normally not 
+allow a user to see unless they are signed in. For example, I went from user 1 to user 11 without being logged in and this is a problem because the public shouldn't
+have access to user accounts without permission, let a lone log in credentials.
+
+For the /green website I was able to confirm that it was vulnverable to a reflective XSS attack. This occurs because the website is not sanitizing any input entered 
+by the user, in this case it is taking any form of codee and executing it. I types a very shor script that read: <script>alert('Javier found the XSS!');</script>, after
+reloading the page, the script is shown on the screen in a prompt.
