@@ -9,3 +9,6 @@ have access to user accounts without permission, let a lone log in credentials.
 For the /green website I was able to confirm that it was vulnverable to a reflective XSS attack. This occurs because the website is not sanitizing any input entered 
 by the user, in this case it is taking any form of codee and executing it. I types a very shor script that read: <script>alert('Javier found the XSS!');</script>, after
 reloading the page, the script is shown on the screen in a prompt.
+
+In the /blue target, you are able to execute an SQLite injection attack, by simply entering any contact page and changing the id= -number- to 'OR SLEEP(3)=0--' it will
+make the browser try to reload in the seconds specified within the parenthesis. 
